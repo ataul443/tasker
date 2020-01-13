@@ -2,19 +2,21 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/spf13/cobra"
 	"strings"
+
+	"github.com/spf13/cobra"
+
 )
 
 var addCmd = &cobra.Command{
-	Use: "add",
+	Use:   "add",
 	Short: "Adds a task into your task list.",
-	Run: func(cmd *cobra.Command, args []string){
+	Run: func(cmd *cobra.Command, args []string) {
 		taskDesc := strings.Join(args, " ")
 		fmt.Printf("Added \"%s\" into your task list.\n", taskDesc)
 	},
 }
 
-func init(){
+func init() {
 	RootCmd.AddCommand(addCmd)
 }
